@@ -1,125 +1,105 @@
 // Desafio Entregable - Manejo de Archovos en JS - Cañete Joaquin
 
 //imoprto archivos necesarios
-const fs = require('fs')
-
+const fs = require("fs");
+let arrayDeProductos = [];
+let objetoProducto = {};
 
 // 1 Declarar una clase Contenedor
 
 class Contenedor {
+  constructor(archivo) {
+    this.archivo = archivo;
     
-    constructor(archivo){
-        this.archivo = archivo;
-        async function crear (){
-            await fs.promises.writeFile(`./${archivo}`,'[]')
-        }
-        crear();
-        
-    }
+  }
 
-    async save(objeto){ 
-        let data = await fs.promises.readFile(`./${this.archivo}`,'utf-8')
-        if (!data){
-            const obj ={
-                ...objeto,
-                id : 1
-            }
-            
-            await fs.promises.writeFile(`./${this.archivo}`, JSON.stringify(array))
-        } else{
-            data = JSON.parse(data);
-            objeto.id = data.length
-            try{
-                data.push(obj)
-                await fs.promises.writeFile(`./${this.archivo}`, JSON.stringify(data))
-                console.log(objeto.id);
-            } catch (guardado)
-            {
-                console.log(`ocurrio un error ${guardado}`);
-            }
-        }
-
+  async save(objeto) {
+    try {
+      objetoProducto = objeto;
+      objetoProducto.id = arrayDeProductos.length + 1;
+      arrayDeProductos.push(objetoProducto);
+      await fs.promises.writeFile(
+        this.archivo,
+        JSON.stringify(arrayDeProductos, null, 2)
+      );
+    } catch (error) {
+      console.log(error);
     }
 
     
-    async getById(id){
-        try{
+  }
 
-            let productos = JSON.parse (await fs.promises.readFile(`./this.archivo`, 'utf-8'))
-            let producto = productos.find(prod => prod.id === id)
-            console.log(producto);
-        } catch(errorid){
-            console.log('lo siento, no se encontro el id');
-        }
-
+  async getById(id) {
+    try {
+      arrayDeProductos = JSON.parse(
+        await fs.promises.readFile(`./this.archivo`, "utf-8")
+      );
+      let producto = arrayDeProductos.find((prod) => prod.id === id);
+      console.log(producto);
+    } catch (errorid) {
+      console.log("lo siento, no se encontro el id");
     }
-    
-    async getAll(){
-        
-        let productos = JSON.parse (await fs.promises.readFile(`./this.archivo`, 'utf-8'))
-        console.log(productos);
+  }
+
+  async getAll() {
+    try {
+      arrayDeProductos = JSON.parse(
+        await fs.promises.readFile(`./this.archivo`, "utf-8")
+      );
+      console.log(arrayDeProductos);
+    } catch (error) {
+      console.log(error);
     }
-    
-    async deleteById(id){
-        let productos = JSON.parse (await fs.promises.readFile(`./this.archivo`, 'utf-8'))
-        let producto = productos.findIndex(objeto.id == id);
-        if(producto === -1){
-            console.log('lo siento no se encontra id');
+  }
 
-        } else {
-            productos.splice(producto,1);
-            await fs.promises.writeFile(`./${this.archivo}`, productos);
-            console.log('se ha borrado el producto');
-        }
+  async deleteById(id) {
+    try {
+      arrayDeProductos = JSON.parse(
+        await fs.promises.readFile(`./this.archivo`, "utf-8")).filter((producto)=>producto.id !=id);
+        fs.writeFileSync(this.archivo, JSON.stringify(arrayDeProductos, null,2));
+      
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-        }
-        
-    async deleteAll(){
-        try{
-            await fs.promises.writeFile(`./${this.archivo}`,'')
-        } catch (err){
-            console.log('error borrando elementos...');
-        }
-            
-        }
-     
-        
+  async deleteAll() {
+    try {
+        arrayDeProductos = [];
+      await fs.promises.writeFile(`./${this.archivo}`, arrayDeProductos);
+    } catch (err) {
+      console.log("error borrando elementos...");
+    }
+  }
 }
 
 // objetos para añadir
 
-const obj1 = [
-    {
-        nombre: 'champu',
-        precio: '250'
-    },
-    
-]
-const obj2 = [
-    
-    {
-        nombre: 'yerba',
-        precio: '500'
-    }
-   
+const arrayProductos = [
+  {
+    nombre: "champu",
+    precio: "250",
+  },
+  {
+    nombre: "yerba",
+    precio: "500",
+  },
+  {
+    nombre: "gaseosa",
+    precio: "200",
+  },
+];
 
-]
-const obj3 = [
-    
-    {
-        nombre: 'gaseosa',
-        precio: '200'
-    }
-
-]
-/*
-//creo el archivo 
-const productos = new Contenedor ('archivo.txt')
+//creo el archivo
+const productos = new Contenedor("productos.txt");
 //agrego productos
-productos.save(obj1);
 
-productos.save(obj2);
-productos.save(obj3);
+for (let i = 0; i < arrayProductos.length; i++) {
+  productos.save(arrayProductos[i]);
+}
+
+/*
+
 
 //pido 1 producto
 productos.getById(1);

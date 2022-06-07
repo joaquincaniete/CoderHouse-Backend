@@ -1,0 +1,17 @@
+[
+  {
+    "nombre": "champu",
+    "precio": "250",
+    "id": 1
+  },
+  {
+    "nombre": "yerba",
+    "precio": "500",
+    "id": 2
+  }
+]  {
+    "nombre": "gaseosa",
+    "precio": "200",
+    "id": 3
+  }
+]
