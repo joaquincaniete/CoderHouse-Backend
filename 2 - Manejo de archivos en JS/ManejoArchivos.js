@@ -94,19 +94,19 @@ const arrayProductos = [
 const productos = new Contenedor("productos.txt");
 //agrego productos
 
+/*
 for (let i = 0; i < arrayProductos.length; i++) {
   productos.save(arrayProductos[i]);
 }
 
-/*
 
 
 //pido 1 producto
 productos.getById(1);
-
+*/
 //pido todos los productos
 productos.getAll();
-
+/*
 //elimino el producto
 productos.deleteById(1);
 
