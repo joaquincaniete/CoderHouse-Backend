@@ -1,0 +1,23 @@
+extends ./layout/main.pug
+
+block products
+
+    if productos.length 
+
+        div#main-container
+                table(border="1" align="center")
+                    thead
+                        tr
+                            th PRODUCTO
+                            th PRECIO
+                            th PORTADA
+                    each producto in productos
+                        tr
+                            td= `${producto.title}`
+                            td= `ARS$${producto.price}`
+                            td 
+                                img(alt="item img" src=`${producto.thumbnail}` width='100px' height='100px')
+    else
+        p no hay productos 
+    
+    
