@@ -1,0 +1,9 @@
+Habiendo utilizado Handlebars, pug y ejs, me parecio mas sencillo de trabajar ejs.
+Si bien podemos lograr los mismo con cualquiera de los tres motores me dio la siguiente impresion
+Handlebars: Hay que realizar un proceso de configuracion mas largo para el server, pero el armado del layout
+es muy rapido y relativamente sencillo, en ese sentido lo encontre parecido a react
+Pug: es sencillo de configurar pero el hecho no tener las aperturas y cierres de etiquetas en html y en sentencias en el
+script lo senti parecido a python, con solo una identacion mal ya es un error y puede llevar mucho tiempo encontrar un error muy pequeño
+ademas de no tener los ayudas del predictivo o algun snippet de errores para ir corrigiendo mientras se va escribiendo.
+Ejs: sencillo de configurar como pug, y la forma de trabajar en las vistas .ejs muy parecida a jsp (java server pages), el hecho q tenga snippets y 
+predictivo lo hacen mas amigable. Se hecha en falta la posibilidad de hacer un layout general como las otras.

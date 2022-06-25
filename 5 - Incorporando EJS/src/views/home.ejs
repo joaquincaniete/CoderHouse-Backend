@@ -1,0 +1,13 @@
+
+<%- include('./partials/nav.ejs') %>
+<section>
+    <h2>CARGAR PRODUCTO</h2>
+    <form method="post" action="/productos">
+        <label>Título: <input type="text" name="title"></label>
+        <label>Precio: <input type="number" name="price"></label>
+        <label>Thumbnail: <input type="url" name="thumbnail"></label>
+        <button>CARGAR</button>
+    </form>
+</section>
+
+<%- include('./partials/footer.ejs') %>

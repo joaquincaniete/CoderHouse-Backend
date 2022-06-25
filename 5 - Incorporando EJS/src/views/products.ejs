@@ -1,0 +1,26 @@
+<%- include('./partials/nav.ejs') %>
+
+<%if(productos.length) { %>
+    <div id="main-container">
+        <table  border="1" align="center">
+            <thead>
+                <tr>
+                    <th>TITULO</th>
+                    <th>PRECIO</th>
+                    <th>PORTADA</th>
+                </tr>
+            </thead>
+    <% productos.forEach(producto => { %>
+        <tr> 
+            <td><strong><%= producto.title %></strong></td>
+            <td>ARS$<%= producto.price %></td>
+            <td><img alt="item img" src="<%=producto.thumbnail%>" width="100px" height="100px"/></td>
+        </tr>
+    <% }) %> 
+    </table>
+    </div>
+<% } else { %>
+    <p>No hay productos cargados</p>
+<% } %> 
+
+<%- include('./partials/footer.ejs') %>
