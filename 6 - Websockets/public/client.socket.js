@@ -93,7 +93,7 @@ socket.on('server:mensajes', mensajes=>{
 
 function renderMessages(mensajes){
     const html = mensajes.map(msgInfo=>{
-        return (`<div> <span style="color:Blue;"><strong>${msgInfo.mail}</strong></span><span style="color:Brown;">${msgInfo.fecha}:</span>
+        return (`<div> <span style="color:Blue;"><strong>${msgInfo.mail}</strong></span><span style="color:Brown;"> [${msgInfo.fecha}] :</span>
             <span style="color:Green"><em>${msgInfo.mensaje}</em></span></div>`)
     }).join(" ");
     console.log(`HTML `, html);
