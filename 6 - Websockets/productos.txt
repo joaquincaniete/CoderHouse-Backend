@@ -1,0 +1,22 @@
+[
+  {
+    "titulo": "Lapiz",
+    "thumbnail": "https://img.freepik.com/vector-gratis/lapiz_24908-54630.jpg?w=2000",
+    "price": "123"
+  },
+  {
+    "titulo": "goma",
+    "thumbnail": "https://image.shutterstock.com/image-photo/rubber-eraser-pencil-ink-pen-260nw-656520052.jpg",
+    "price": "50"
+  },
+  {
+    "titulo": "Regla T",
+    "thumbnail": "https://www.arkiplus.com/wp-content/uploads/2013/07/Regla_T.jpg",
+    "price": "500"
+  },
+  {
+    "titulo": "escuadra",
+    "thumbnail": "https://image.shutterstock.com/image-photo/white-transparent-rulers-isolated-on-260nw-233153764.jpg",
+    "price": "450"
+  }
+]
