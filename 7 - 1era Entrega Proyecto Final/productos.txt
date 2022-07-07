@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "timestamp": 1656973556339,
+    "nombre": "gaseosa",
+    "descripcion": "coca cola light",
+    "codigo": "1250",
+    "foto": "https://imagenes.elpais.com/resizer/jxWyWm_7T6ytRJjEX0o_zaSGh2I=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/B6S32GKTCZILLYQOBHUU24Q3A4.jpg",
+    "precio": "120",
+    "stock": 55185
+  },
+  {
+    "id": 2,
+    "timestamp": 1656975381999,
+    "nombre": "gaseosa",
+    "descripcion": "sprite",
+    "codigo": "1250",
+    "foto": "https://lachimbotana.com.ar/wp-content/uploads/2020/06/Sprite500-1.jpg",
+    "precio": "120",
+    "stock": 187
+  },
+  {
+    "id": 3,
+    "timestamp": 1656982581379,
+    "nombre": "gaseosa",
+    "descripcion": "coca cola light",
+    "codigo": "1250",
+    "foto": "https://imagenes.elpais.com/resizer/jxWyWm_7T6ytRJjEX0o_zaSGh2I=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/B6S32GKTCZILLYQOBHUU24Q3A4.jpg",
+    "precio": "120",
+    "stock": 50045
+  }
+]
