@@ -2,7 +2,7 @@ require('dotenv').config()
 const fs = require("fs");
 const express = require ('express')
 const app = express()
-const rutas = require('./routes/index')
+const rutas = require('./src/routes/index')
 const puerto = process.env.PUERTO  //en archivo de ambiente
 
 

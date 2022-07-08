@@ -149,51 +149,6 @@ class Carrito {
     }
 
 
-    /*
-      async modifyProducts (productoModif, id){
-        try{
-            productos = JSON.parse(fs.readFileSync(archivo, "utf-8"))
-            const {nombre, descripcion, codigo, foto, precio, stock} = productoModif;
-            let producto = productos.findIndex((prod) => {
-              return prod.id == id;
-            });               
-            if (producto != -1){
-              productos[producto].nombre = nombre;
-              productos[producto].descripcion = descripcion;
-              productos[producto].codigo = codigo;
-              productos[producto].foto = foto;
-              productos[producto].precio = precio;
-              productos[producto].stock = stock;
-
-              await fs.promises.writeFile(
-                archivo, JSON.stringify(productos, null,2));
-              } else {console.log('error: producto no encontrado');}
-            } catch(error){
-                console.log(error);
-            }
-    }
-    async deleteProduct (id){
-      try{
-          productos = JSON.parse(fs.readFileSync(archivo, "utf-8"))
-
-          let producto = productos.findIndex((prod) => {
-            return prod.id == id;
-          });               
-          if (producto != -1) {
-            productos.splice(producto, 1);
-            await fs.promises.writeFile(
-              archivo, JSON.stringify(productos, null,2));
-              msj = { ok: "producto eliminado exitosamente"}              
-              return msj      
-            } else {
-              msj = { error: "error producto no encontrado"}  
-              return msj
-          }            
-          } catch(error){
-              console.log(error);
-          }
-  }
-*/
 }
 
 module.exports = new Carrito 

@@ -24,7 +24,7 @@ class Producto {
             productos.push(objetoProducto);
             await fs.promises.writeFile(
                 archivo, JSON.stringify(productos, null,2));
-            return { ok: "producto eliminado exitosamente"} 
+            return { ok: "producto agregado exitosamente"} 
             } catch(error){
                 return { error: "ocurrio un error, intente nuevamente"}                 
             }
@@ -68,7 +68,13 @@ class Producto {
 
               await fs.promises.writeFile(
                 archivo, JSON.stringify(productos, null,2));
-              } else {console.log('error: producto no encontrado');}
+
+                msj = { ok: "producto modificado exitosamente"} 
+              
+              } else { msj = { error: "ocurrio un error, por favor intente nuevamente"} }
+
+              return msj
+
             } catch(error){
                 console.log(error);
             }
