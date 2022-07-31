@@ -4,7 +4,7 @@ import ContenedorMongo from "../../contenedores/contenedorMongo.js";
 
 class CarritoDaoMongo extends ContenedorMongo {
   constructor() {
-    super("compras", {
+    super("carritos", {
       timestamp: { type: String, required: true },
       productos: { type: Array, required: true },
     });
