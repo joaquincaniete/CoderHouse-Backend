@@ -1,4 +1,8 @@
 export default{
+    mongodb:{
+      connectionString: "mongodb+srv://joaquincaniete:portland@cluster0.c5k2p.mongodb.net/ecommerce?retryWrites=true&w=majority",
+    },
+
     firebase: {
         "type": "service_account",
         "project_id": "coder-backend-23e69",
