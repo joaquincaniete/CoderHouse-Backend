@@ -7,6 +7,7 @@ admin.initializeApp({
 });
 
 const db = admin.firestore();
+console.log("Conexión establecida con Firebase")
 
 class ContenedorFirebase {
   constructor(coleccion) {
@@ -14,8 +15,11 @@ class ContenedorFirebase {
   }
 
   async readAll() {
-    const docs = await this.coleccion;
+    
+    const docs = this.coleccion;
+    
     const snapshot = await docs.get();
+    
     let arrayProductos = [];
     snapshot.forEach((doc) => {
       let data = doc.data();
@@ -32,8 +36,7 @@ class ContenedorFirebase {
   }
 
   async createElement(elemento) {
-    elemento.timestamp = new Date().toLocaleString("fr-FR");
-    delete elemento.administrador;
+    elemento.timestamp = new Date().toLocaleString("fr-FR");    
     const newElement = this.coleccion.doc();
     await newElement.create(elemento);
     return;

@@ -1,8 +1,10 @@
 import {CarritoDao} from "../daos/index.js";
 
+const carrito = new CarritoDao();
+
 const getNewCart = async (req, res) => {
   try {
-    const resultado = await CarritoDao.createCart();
+    const resultado = await carrito.createCart();
     res.send(resultado);
   } catch (error) {
     console.log(
@@ -14,7 +16,7 @@ const getNewCart = async (req, res) => {
 };
 const deleteCart = async (req, res) => {
   try {
-    let resultado = await CarritoDao.deleteElement(req.params.id);
+    let resultado = await carrito.deleteElement(req.params.id);
     if (!resultado) {
       res.send("El id de carrito no existe");
     } else {
@@ -30,7 +32,7 @@ const deleteCart = async (req, res) => {
 };
 const getCartProducts = async (req, res) => {
   try {
-    let resultado = await CarritoDao.readById(req.params.id);
+    let resultado = await carrito.readById(req.params.id);
     res.send(resultado);
   } catch (error) {
     console.log(
@@ -43,7 +45,7 @@ const getCartProducts = async (req, res) => {
 const postProductToCart = async (req, res) => {
   try {
 
-    let resultado = await CarritoDao.saveInCart(req.params.id, req.body);
+    let resultado = await carrito.saveInCart(req.params.id, req.body);
     res.send(resultado);
   } catch (error) {
     console.log(
@@ -55,7 +57,7 @@ const postProductToCart = async (req, res) => {
 };
 const deleteProductFromCart = async (req, res) => {
   try {
-    let resultado = await CarritoDao.deleteFromCart(
+    let resultado = await carrito.deleteFromCart(
       req.params.id,
       req.params.id_prod
     );

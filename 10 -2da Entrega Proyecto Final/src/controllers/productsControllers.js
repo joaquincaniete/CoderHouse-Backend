@@ -1,10 +1,11 @@
 
 import {ProductoDao} from "../daos/index.js";
 
+const productDao = new ProductoDao()
 
 const getProducts = async (req, res) => {
   try {
-    const resultado = await ProductoDao.readAll();
+    const resultado = await productDao.readAll();
     res.send(resultado);
   } catch (error) {
     console.log(
@@ -16,7 +17,7 @@ const getProducts = async (req, res) => {
 };
 const getProduct = async (req, res) => {
   try {
-    const resultado = await ProductoDao.readById(req.params.id);
+    const resultado = await productDao.readById(req.params.id);
     if (!resultado) {
       res.send("El id de producto no existe");
     } else {
@@ -32,7 +33,7 @@ const getProduct = async (req, res) => {
 };
 const postProduct = async (req, res) => {
   try {
-    await ProductoDao.createElement(req.body);
+    await productDao.createElement(req.body);
     res.sendStatus(200);
   } catch (error) {
     console.log(
@@ -44,7 +45,7 @@ const postProduct = async (req, res) => {
 };
 const putProduct = async (req, res) => {
   try {
-    let resultado = await ProductoDao.updateElement(req.params.id, req.body);
+    let resultado = await productDao.updateElement(req.params.id, req.body);
     if (!resultado) {
       res.send("El id de producto no existe");
     } else {
@@ -60,7 +61,7 @@ const putProduct = async (req, res) => {
 };
 const deleteProduct = async (req, res) => {
   try {
-    let resultado = await ProductoDao.deleteElement(req.params.id);
+    let resultado = await productDao.deleteElement(req.params.id);
     if (!resultado) {
       res.send("El id de producto no existe");
     } else {

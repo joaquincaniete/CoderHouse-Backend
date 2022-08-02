@@ -6,24 +6,28 @@ let CarritoDao;
 
 switch (process.env.DATABASE) {
   case "firebase":
-    const { default: ProductoDaoFirebase } = await import(
+    const { ProductoDaoFirebase } = await import(
       "./productos/productoDaoFirebase.js"
     );
-    const { default: CarritoDaoFirebase } = await import(
+    
+    const { CartDaoFirebase } = await import(
       "./carritos/carritoDaoFirebase.js"
     );
+    
 
     ProductoDao = ProductoDaoFirebase;
-    CarritoDao = CarritoDaoFirebase;
+    CarritoDao = CartDaoFirebase;
 
     break;
   case "mongo":
-    const { default: ProductoDaoMongo } = await import(
+    const { ProductoDaoMongo } = await import(
       "./productos/productoDaoMongo"
-    );
-    const { default: CarritoDaoMongo } = await import(
+    ); 
+    
+    const { CarritoDaoMongo } = await import(
       "./carritos/carritoDaoMongo"
     );
+    
 
     ProductoDao = ProductoDaoMongo;
     CarritoDao = CarritoDaoMongo;

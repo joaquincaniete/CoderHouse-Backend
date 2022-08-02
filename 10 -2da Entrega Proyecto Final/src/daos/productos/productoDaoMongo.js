@@ -1,7 +1,7 @@
 import ContenedorMongo from "../../contenedores/contenedorMongo.js";
 
 
-class ProductoDaoMongo extends ContenedorMongo {
+export class ProductoDaoMongo extends ContenedorMongo {
   constructor() {
     super("productos", {
       timestamp: { type: String, required: true },
@@ -15,4 +15,3 @@ class ProductoDaoMongo extends ContenedorMongo {
   }
 }
 
-export default ProductoDaoMongo;

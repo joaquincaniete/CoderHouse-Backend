@@ -2,7 +2,7 @@
 import ContenedorMongo from "../../contenedores/contenedorMongo.js";
 
 
-class CarritoDaoMongo extends ContenedorMongo {
+export class CarritoDaoMongo extends ContenedorMongo {
   constructor() {
     super("carritos", {
       timestamp: { type: String, required: true },
@@ -11,4 +11,3 @@ class CarritoDaoMongo extends ContenedorMongo {
   }
 }
 
-export default CarritoDaoMongo;
