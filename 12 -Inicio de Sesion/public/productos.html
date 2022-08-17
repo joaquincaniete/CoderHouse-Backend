@@ -13,30 +13,15 @@
 <body>
 
     <div class="container">
+        <div id="user">
+            
 
-        <br />
-        <h2>Ingrese Productos</h2>
-        <br />
-        <div>
-            <form id="formInputProductos">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Nombre Producto</label>
-                    <input type="text" class="form-control" id="productoInput">
-
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Precio Producto</label>
-                    <input type="number" class="form-control" id="precioInput">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">URL imagen Producto</label>
-                    <input type="url" class="form-control" id="urlInput" aria-describedby="emailHelp">
-
-                </div>
-
-                <button type="submit" class="btn btn-primary">CARGAR</button>
-            </form>
         </div>
+
+        <br />
+        <h2>Productos</h2>
+        <br />
+
 
         <div>
 
@@ -64,16 +49,28 @@
             <form id="formInputMessage">
                 <br/>
                 <div class="mb-3">
-
                     <input type="email" class="form-control" id="emailInput" placeholder="nombre@gmail.com">
-
                 </div>
                 <div class="mb-3">
-
-                    <input type="text" class="form-control" id="msgInput" placeholder="ingrese su mensaje">
-
+                    <input type="text" class="form-control" id="nameInput" placeholder="ingrese su nombre">
                 </div>
-
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="apellidoInput" placeholder="ingrese su apellido">
+                </div>
+                <div class="mb-3">                    
+                    <input type="number" class="form-control" id="edadInput" placeholder="Edad">
+                 </div>
+                    
+                <div class="mb-3">
+                        <input type="text" class="form-control" id="aliasInput" placeholder="alias">
+                </div>
+                <div class="mb-3">
+                    <input type="url" class="form-control" id="avatarInput" placeholder="url Avatar">
+                </div>
+                    
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="msgInput" placeholder="ingrese su mensaje">
+                </div>
                 <button type="submit" class="btn btn-primary">ENVIAR</button>
             </form>
         </div>
@@ -85,8 +82,12 @@
 
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script src="./client.socket.js"></script>
+       
+       
+
 </body>
 
 </html>
