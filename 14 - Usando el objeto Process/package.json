@@ -1,0 +1,26 @@
+{
+  "name": "passport-local",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.0.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "@faker-js/faker": "^7.3.0",    
+    "nodemon": "^2.0.18",
+    "normalizr": "^3.6.2",
+    "socket.io": "^4.5.1",
+    "dotenv": "^16.0.1"
+  }
+}
