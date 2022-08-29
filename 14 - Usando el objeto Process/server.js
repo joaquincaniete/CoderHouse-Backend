@@ -14,6 +14,7 @@ const config = require("./config");
 const controllersdb = require("./controllersdb");
 const User = require("./models");
 const app = express();
+const randomApi = require("./randomApi.js")
 
 
 //const puerto = process.env.PUERTO  //en archivo de ambiente
@@ -277,7 +278,34 @@ app.get("/ruta-protegida", checkAuthentication, (req, res) => {
 //  LOGOUT
 app.get("/logout", routes.getLogout);
 
+// INFO
+router.get("/info", checkAuthentication, (req, res) => {
+  const platform = process.platform;
+  const version = process.version;
+  const memory = process.memoryUsage();
+  const path = process.execPath;
+  const pid = process.pid;
+  const folder = process.cwd();
+  
+  const objetoInfo = {
+      args,
+      platform,
+      version,
+      memory,
+      path,
+      pid,
+      folder
+  }
+
+  res.json(objetoInfo);
+})
+
+// RANDOMS
+
+app.use("/api/randoms", checkAuthentication, randomApi)
+
 //  FAIL ROUTE
 app.get("*", routes.failRoute);
+
 
 
