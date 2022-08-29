@@ -14,7 +14,7 @@ const config = require("./config");
 const controllersdb = require("./controllersdb");
 const User = require("./models");
 const app = express();
-const randomApi = require("./randomApi.js")
+const randomApi = require("./randomApi")
 
 
 //const puerto = process.env.PUERTO  //en archivo de ambiente
