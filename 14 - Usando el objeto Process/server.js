@@ -15,13 +15,14 @@ const controllersdb = require("./controllersdb");
 const User = require("./models");
 const app = express();
 
+
 //const puerto = process.env.PUERTO  //en archivo de ambiente
 
 
 app.engine(".hbs", exphbs({ extname: ".hbs", defaultLayout: "main.hbs" }));
 app.set("view engine", ".hbs");
 
-const port = 3000;
+const port = config.puerto;
 
 app.use(express.static(__dirname + "/views"));
 app.use(express.json());
@@ -29,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //BD MONGO y Server
 
-controllersdb.conectarDB("mongodb://localhost:27017/passport", (err) => {
+controllersdb.conectarDB(config.dbURL, (err) => {
   if (err) return console.log("error en conexión de base de datos", err);
   console.log("BASE DE DATOS CONECTADA");
   
@@ -157,7 +158,7 @@ const normalizedPost = normalize(
 
 app.use(
   session({
-    secret: "coderhouse",
+    secret: config.secretCookie,
     cookie: {
       httpOnly: false,
       secure: false,
